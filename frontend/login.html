@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../frontend/css/register.css">
+    <title>Login</title>
+</head>
+<body style="background-color: #394867;">
+    <div class="register">
+    <h1 class="title">Login Now</h1>
+    <p class="subtitle">Please fill in this form to create an account.</p>
+    <hr>
+    <form action="#" method="post">
+        <p>Email</p>
+        <input type="text" id="email" name="email" class="form-input" placeholder="Enter Your Email" autocomplete="off" required>
+        <p>Password</p>
+        <input type="password" id="password" name="password" class="form-input" placeholder="Enter Your Password" required>
+        <p>Repeat Password</p>
+        <input type="password" id="repeat" name="repeat" class="form-input" placeholder="Enter Your Repeat Password" required>
+        <p class="terms">By creating an account you agree to our terms & privacy</p>
+        <input type="submit" name="reg" class="btn" value="Login" onclick="return login()">
+        <p style="text-align: center;"><a href="../frontend/register.html" class="sign-in">Register</a></p>
+    </form>
+    </div>  
+</body>
+<script>
+    // login untuk masuk ke website admin
+    function login(){
+        email = document.getElementById("email").value;
+        password = document.getElementById("password").value;
+        password = document.getElementById("repeat").value;
+
+        if(email == "" || password == "" || password == ""){
+            alert("Username / password Tidak boleh kosong")
+            return false;
+        }
+        else if(password.length <7){
+            alert("Password kurang dari 7");
+            return false;
+        }
+        else if(email == "hello@gmail.com" && password == "1234567" && password == "1234567"){
+            window.location = "../backend/user.php"
+            return false;
+        }else{
+            alert("username dan password salah");
+        }
+    }
+</script>
+</html>
